@@ -8,4 +8,4 @@ def get_dimensions():
 def is_palindrome(s):
      """Check if the given string is a palindrome."""
      s = str(s).replace(" ", "").lower()
-     return s == s[::-1] 
+     return s == s[::-1]  

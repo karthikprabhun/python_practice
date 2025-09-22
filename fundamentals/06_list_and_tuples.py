@@ -61,6 +61,8 @@ print("Intersect",alpha.intersection(beta))
 person = {"name": "Varun", "age": 32, "location": "Mangalore"}
 person["email"] = 'hello@mail.com'
 
+# Iterate over keys, followed by values and items
+
 print("iterate over keys\n")
 for key in person.keys():
     print(key)
@@ -74,6 +76,7 @@ for key, value in person.items():
     print("key:", key, "val:", value)
     print(f"{key}: {value}")
 
+# Simple function call example
 def print_map_items(map_obj):
     for key, value in map_obj.items():
         print(f"{key}: {value}")

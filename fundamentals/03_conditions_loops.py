@@ -1,6 +1,6 @@
 # Extended program to learn conditions in Python
 
-print(" Conditions")
+print("Conditions")
 number = int(input("Enter a number: "))
 
 if number > 0:

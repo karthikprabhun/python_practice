@@ -35,6 +35,11 @@ set, list Comprehensions
 - Relationship between object and type. Understand circular relationship 
 - how class is created under the hood ? when class MyClass: defined , python invoked type("MyClass", (base_classes,), class_dict)
 
+File:
+- OS module of Python provides a wide range of useful methods to manage files and directories
+- os.path is another module which provideds few more methods to manage files and directories
+- File object is created using open(). File class defined methods to perform various operation on file.
+
 
 
 Difference against java 

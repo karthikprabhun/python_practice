@@ -9,17 +9,20 @@ is_student = True      # bool (boolean) - immutable
 favorite_letter = 'A'  # str (single character) - immutable
 
 # Mutable types
-hobbies = ["reading", "cycling", "music"]  # list - mutable
+hobbies = ["reading", "cycling", "music", "reading"]  # list - mutable
 grades = {'math': 90, 'science': 85}       # dict (dictionary) - mutable
+fruits = set(["apple", "banana", "cherry","apple"])  # set - mutable
 
 # Print variables and their types
 print("Name:", name, "| Type:", type(name))
 print("Age:", age, "| Type:", type(age))
 print("Height:", height, "| Type:", type(height))
 print("Is Student:", is_student, "| Type:", type(is_student))
-print("Hobbies:", hobbies[0], "| Type:", type(hobbies))
-print("Grades:", grades["math"], "| Type:", type(grades))
+print("Hobbies:", hobbies.__repr__(), "| Type:", type(hobbies))
+print("Grades:", grades.__repr__(),"value for given key is: ",grades["math"], "| Type:", type(grades))
 print("Favorite Letter:", favorite_letter, "| Type:", type(favorite_letter))
+print("Fruits:", fruits.__repr__(), "| Type:", type(fruits))
+
 
 # Exercise:
 # 1. Create your own variables for each data type shown above.
@@ -36,10 +39,18 @@ print("Dictionary Example:", dictionary_example["name"], "| Type:", type(diction
 
 x = 10
 y = x
+print("print before modification")
+print("X:", x, "| id:", id(x))
+print("Y:", y, "| id:", id(y))
+
 x = x + 5
 
-print(x)  # 15
-print(y)  # 10
+print("X:", x, "| id:", id(x)) # 15 reference changed
+print("Y:", y, "| id:", id(y)) # 10
+
+y = 15
+print("Y:", y, "| id:", id(y)) # reference changed to 15 . Reference for both x and y are same point to the same object
+
 
 """ At first: both x and y point to the same 10 object.
 
@@ -59,7 +70,10 @@ print(b)  # [1, 2, 3, 4]
 """
 a and b both point to the same list object.
 
-When b.append(4) modifies the list, a sees the change too.
+When b.append(4) modifies the list, 'a' sees the change too.
+
+In immutable types, changing the value creates a new object and changes the reference.
+In mutable types, changing the value modifies the same object, so all references see the change.
 """
 
 ## No Labels = Garbage Collection
@@ -73,7 +87,7 @@ del y   # Now no label points to the list
 # Python garbage collector can reclaim it
 
 # Summary
-# A variable in Python is just a label → reference → object.
+# A variable in Python is just a label → reference → object. 
 # Immutable objects: new objects are created when you change values.
 # Mutable objects: changes affect all labels pointing to that object.
 # If no label references an object → Python cleans it up (garbage collection).
